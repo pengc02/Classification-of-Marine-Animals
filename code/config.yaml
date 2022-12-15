@@ -1,0 +1,41 @@
+structure:
+    in_channel: 3
+    conv_channel1: 10
+    kernel_size1: 5
+    max_pool1: 2
+    conv_channel2: 20
+    kernel_size2: 5
+    max_pool2: 2
+    linear1: 50
+    out_dim: 19
+optimizer:
+    type: Adam
+    lr: 0.001
+    momentum: 0.0001
+    weight_decay: 0.00001
+schedular:
+    T_max: 500
+    eta_min: 0.00001
+    gamma: 0.95
+data:
+    data_dir: ./database
+    train_ratio: 0.8
+    valid_ratio: 0.1
+    test_ratio: 0.1
+    resize: 224
+    padding: 25
+testing:
+    height: 540
+    width: 960
+    ckpt_epoch: 500
+
+epoch: 500
+train_batch_size: 128
+valid_batch_size: 128
+test_batch_size: 128
+early_stop: 10
+seed: 42
+cuda: True
+device: cuda
+save_dir: ./vgg16-pre
+model_dir: ./modelzoo
